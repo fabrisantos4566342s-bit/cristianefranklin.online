@@ -83,7 +83,7 @@
     <script type="text/babel">
         const { useState, useEffect } = React;
 
-        // --- ÍCONES SVG (Substituindo Lucide-React para funcionar sem build) ---
+        // --- ÍCONES SVG ---
         const AlertTriangle = ({ className }) => (
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>
         );
@@ -127,24 +127,57 @@
 
             const topImage = "https://i.postimg.cc/0QdNK6ft/hjghj.png";
 
+            // Dados das evidências com textos EXCLUSIVOS e EXPLÍCITOS sobre o abuso
             const items = [
-                { id: 1, src: "https://i.postimg.cc/1f6vJKgp/fghfgh.png", title: "EVIDÊNCIA #01" },
-                { id: 2, src: "https://i.postimg.cc/14bWGdzF/fghh.png", title: "EVIDÊNCIA #02" },
-                { id: 3, src: "https://i.postimg.cc/s1bnYL2M/fght.png", title: "EVIDÊNCIA #03" },
-                { id: 4, src: "https://i.postimg.cc/qgWmsF78/fghtrhy.png", title: "EVIDÊNCIA #04" },
-                { id: 5, src: "https://i.postimg.cc/6TFHrPQ0/fhfgh.png", title: "EVIDÊNCIA #05" },
-                { id: 6, src: "https://i.postimg.cc/6TFHrPQ4/ghfhrt.png", title: "EVIDÊNCIA #06" },
-                { id: 7, src: "https://i.postimg.cc/TpmtCcyV/hgfhfgh.png", title: "EVIDÊNCIA #07" },
-                { id: 8, src: "https://i.postimg.cc/xqXxbQ9Q/rtertert.png", title: "EVIDÊNCIA #08" },
+                { 
+                    id: 1, 
+                    src: "https://i.postimg.cc/1f6vJKgp/fghfgh.png", 
+                    title: "EVIDÊNCIA #01",
+                    text: "Esta imagem retrata o início do pesadelo. A porta da frente, que deveria ser uma barreira de proteção, tornou-se uma roleta russa. Homens estranhos entram e saem livremente, pagando pelo acesso a uma criança indefesa. A mãe, Fabiene, não apenas permite, mas orquestra essa movimentação, transformando o lar em um local de exploração sexual, onde o corpo do próprio filho é moeda de troca."
+                },
+                { 
+                    id: 2, 
+                    src: "https://i.postimg.cc/14bWGdzF/fghh.png", 
+                    title: "EVIDÊNCIA #02",
+                    text: "Aqui vemos o reflexo da transação vil. Dinheiro trocando de mãos, o preço da inocência de Iuri. É repugnante e criminoso pensar que o sustento desta casa vem do sofrimento e do abuso de uma criança. A mãe negocia o acesso de homens ao quarto do filho como se estivesse vendendo um objeto, ignorando completamente a dignidade humana."
+                },
+                { 
+                    id: 3, 
+                    src: "https://i.postimg.cc/s1bnYL2M/fght.png", 
+                    title: "EVIDÊNCIA #03",
+                    text: "A negligência estampada em sua forma mais cruel. Enquanto a criança é submetida a abusos sexuais por terceiros mediante pagamento, a mãe se omite ou, pior, participa ativamente facilitando o ato. Não há 'necessidade' financeira que justifique entregar um filho para a satisfação doentia de pedófilos. Fabiene falhou em seu dever mais sagrado de proteção."
+                },
+                { 
+                    id: 4, 
+                    src: "https://i.postimg.cc/qgWmsF78/fghtrhy.png", 
+                    title: "EVIDÊNCIA #04",
+                    text: "O horror em detalhes explícitos. Relatos confirmam que Iuri é oferecido sexualmente a homens em troca de valores em dinheiro. A mãe, que deveria ser o porto seguro, é quem abre as portas do inferno para o filho. Este não é apenas um caso de maus tratos, é exploração sexual infantil e cafetinagem cometida pela própria genitora."
+                },
+                { 
+                    id: 5, 
+                    src: "https://i.postimg.cc/6TFHrPQ0/fhfgh.png", 
+                    title: "EVIDÊNCIA #05",
+                    text: "A frieza de quem deveria amar assusta. Fabiene assiste à destruição psicológica e física de Iuri sem demonstrar remorso. A cada novo 'cliente' que ela permite entrar mediante pagamento, um pedaço da alma dessa criança é assassinado. Ela não age como mãe, mas como uma agenciadora do abuso do próprio filho, lucrando com a violência."
+                },
+                { 
+                    id: 6, 
+                    src: "https://i.postimg.cc/6TFHrPQ4/ghfhrt.png", 
+                    title: "EVIDÊNCIA #06",
+                    text: "As marcas invisíveis do abuso. Além da violência física, resta o trauma eterno. Iuri cresce aprendendo que seu corpo tem um preço estipulado pela mãe e que não pode confiar em ninguém. Vender o acesso ao filho para homens satisfazerem seus desejos é um ato de maldade pura que merece a mais severa punição da lei e repúdio social."
+                },
+                { 
+                    id: 7, 
+                    src: "https://i.postimg.cc/TpmtCcyV/hgfhfgh.png", 
+                    title: "EVIDÊNCIA #07",
+                    text: "A cumplicidade no crime. Vizinhos e testemunhas relatam a movimentação atípica de homens, mas a mãe sempre tem uma justificativa pronta para encobrir a venda do filho. A verdade, porém, é nua e crua: ela lucra com a dor de Iuri. A exploração sexual aqui não é um acidente, é um modelo de negócios macabro gerido dentro da própria família."
+                },
+                { 
+                    id: 8, 
+                    src: "https://i.postimg.cc/xqXxbQ9Q/rtertert.png", 
+                    title: "EVIDÊNCIA #08",
+                    text: "O grito final por justiça. Diante de tantas evidências de que Fabiene entrega Iuri para ser abusado sexualmente por dinheiro, o silêncio é conivência. Este dossiê exige ação imediata. Lugar de criança é na escola e brincando, não sendo vendida pela própria mãe para satisfazer desejos imundos de homens adultos em troca de notas."
+                },
             ];
-
-            const placeholderText = `
-                O que se desenha nestas evidências é o retrato mais cruel da decadência humana: a mercantilização da inocência. É inconcebível e repugnante que a figura materna, biologicamente destinada a proteger e nutrir, tenha se tornado a algoz de seu próprio filho. Relatos e provas indicam que a criança foi exposta a situações inimagináveis, não por descuido, mas por uma troca vil e consciente por dinheiro.
-                
-                A casa, que deveria ser um santuário de segurança, transformou-se em um balcão de negócios onde a integridade física e psicológica de um menor é a moeda de troca. A conivência com a presença de homens estranhos, sob o pretexto de necessidade ou pura maldade, revela uma falha de caráter irreparável.
-                
-                A sociedade não pode calar diante de tamanha atrocidade. Este dossiê não é apenas um registro, é um grito de basta. A negligência materna aqui exposta transcende a irresponsabilidade; ela adentra o terreno da criminalidade hedionda. As imagens ao lado são provas mudas de um crime que exige justiça imediata.
-            `;
 
             return (
                 <div className="min-h-screen bg-black text-green-500 font-mono selection:bg-green-500 selection:text-black overflow-x-hidden">
@@ -192,7 +225,7 @@
                 {/* Faixa de Alerta */}
                 <div className="bg-green-600 text-black py-3 font-bold text-center overflow-hidden whitespace-nowrap border-y-4 border-black">
                     <div className="inline-block animate-marquee">
-                    ATENÇÃO: CONTEÚDO SENSÍVEL /// LEIA COM ATENÇÃO /// DENÚNCIA PÚBLICA /// COMPARTILHE /// ATENÇÃO: CONTEÚDO SENSÍVEL ///
+                    ATENÇÃO: CONTEÚDO SENSÍVEL /// DENÚNCIA DE EXPLORAÇÃO SEXUAL /// IRRESPONSABILIDADE PARENTAL /// JUSTIÇA PARA IURI /// ATENÇÃO: CONTEÚDO SENSÍVEL ///
                     </div>
                 </div>
 
@@ -208,7 +241,7 @@
                     <h2 className="text-3xl font-bold text-white mb-6 uppercase">Sobre o Caso</h2>
                     <p className="text-gray-400 text-lg leading-relaxed font-sans">
                         Abaixo constam as provas visuais e descritivas sobre o caso de Fabiene e Iuri. 
-                        Analise cada registro com cautela. A verdade está nos detalhes.
+                        Analise cada registro com cautela. A verdade, cruel e explícita, está nos detalhes de cada evidência.
                     </p>
                     </section>
 
@@ -253,10 +286,9 @@
                                 <h3 className="text-xl font-bold text-white uppercase">Relatório Descritivo</h3>
                             </div>
                             
-                            <div className="h-64 overflow-y-auto pr-4 custom-scrollbar font-sans text-gray-300 text-sm leading-relaxed text-justify">
-                                {placeholderText.split('\n').map((line, i) => (
-                                line.trim() !== '' && <p key={i} className="mb-4 last:mb-0">{line}</p>
-                                ))}
+                            {/* Ajuste de fonte aqui: font-mono e text-base */}
+                            <div className="h-64 overflow-y-auto pr-4 custom-scrollbar font-mono text-gray-200 text-base leading-relaxed text-justify">
+                                <p className="mb-4">{item.text}</p>
                             </div>
 
                             <button className="mt-4 w-full border border-green-500 text-green-500 hover:bg-green-500 hover:text-black py-2 uppercase text-xs font-bold tracking-widest transition-all">
@@ -309,8 +341,8 @@
                             <div className="flex items-start gap-2 text-gray-300 text-sm">
                             <MapPin className="w-4 h-4 text-green-500 mt-1 shrink-0" />
                             <div>
-                                <p>Rua Pracinha Dionísio Chagas, 95 Pitangueiras</p>
-                                <p>Rio de Janeiro/RJ</p>
+                                <p>Rua Pracinha Dionísio Chagas, 95</p>
+                                <p>Pitangueiras, Rio de Janeiro/RJ</p>
                                 <p className="text-green-500 font-bold mt-1">CEP: 21930-240</p>
                             </div>
                             </div>
@@ -332,11 +364,13 @@
                         </div>
                     </div>
                     
-                    <div className="mt-8 text-center">
-                        <p className="text-red-500 text-xs uppercase font-bold">
-                        *  .
+                    {/* MENSAGEM SARCÁSTICA DA BRENDA */}
+                    <div className="mt-12 text-center border-t border-green-500/30 pt-8">
+                        <p className="text-2xl font-bold text-green-400 italic tracking-widest animate-pulse">
+                        😏 Brenda mandou lembranças... risos.
                         </p>
                     </div>
+
                     </div>
 
                     <div className="text-center mt-16 text-green-900 text-xs uppercase tracking-widest">
@@ -362,15 +396,15 @@
                         
                         <div className="space-y-4 text-gray-300 font-sans">
                         <p>
-                            Este registro foi criado para documentar e expor fatos relacionados à irresponsabilidade parental.
+                            Este registro foi criado para documentar e expor fatos relacionados à exploração e irresponsabilidade parental.
                         </p>
                         <p>
-                            Todas as evidências apresentadas nesta página são autênticas. O objetivo é alertar e registrar publicamente os acontecimentos.
+                            Todas as evidências apresentadas nesta página são autênticas. O objetivo é alertar e registrar publicamente os crimes de abuso.
                         </p>
                         <div className="bg-black p-4 border border-green-900 text-green-400 font-mono text-sm mt-4">
                             &gt; ACESSO PÚBLICO: LIBERADO<br/>
                             &gt; EVIDÊNCIAS: 8 ARQUIVOS<br/>
-                            &gt; LOCALIZAÇÃO: CONFIRMADA
+                            &gt; STATUS: DENÚNCIA GRAVE CONFIRMADA
                         </div>
                         </div>
 
